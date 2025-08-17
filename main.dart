@@ -90,27 +90,23 @@ ActualizarProducto(List<Map<String , dynamic>> Productos) {
     return;
   }
 
-  // Guardar valores actuales
+ 
   String nombreActual = Productos[indice]['nombre'];
   double precioActual = Productos[indice]['precio'];
   int cantidadActual = Productos[indice]['cantidadDisponible'];
 
-  // Pedir nuevo nombre
   print('Ingrese el nuevo nombre del producto:');
   String entradaNombre = stdin.readLineSync() ?? '';
   String nuevoNombre = entradaNombre.isEmpty ? nombreActual : entradaNombre;
 
-  // Pedir nuevo precio
   print('Ingrese el nuevo precio del producto:');
   String entradaPrecio = stdin.readLineSync() ?? '';
   double nuevoPrecio = entradaPrecio.isEmpty ? precioActual : double.parse(entradaPrecio);
-
   
   print('Ingrese la nueva cantidad disponible:');
   String entradaCantidad = stdin.readLineSync() ?? '';
   int nuevaCantidad = entradaCantidad.isEmpty ? cantidadActual : int.parse(entradaCantidad);
 
-  // Actualizar producto
   Productos[indice] = {
     'nombre': nuevoNombre,
     'precio': nuevoPrecio,
@@ -140,4 +136,5 @@ EliminarProductos(List<Map<String , dynamic>> Productos){{
     print('Índice inválido. No se pudo eliminar el producto.');
       print('-------------------------------------');
   }
+
 }}
